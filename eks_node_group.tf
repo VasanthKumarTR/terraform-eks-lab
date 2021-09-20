@@ -6,7 +6,7 @@ resource "aws_eks_node_group" "eks-lab" {
   #subnet_ids = aws_subnet.eks-lab-pub.*.id 
   subnet_ids = concat(aws_subnet.eks-lab-pub.*.id,aws_subnet.eks-lab-pub.*.id)
 
-  instance_types = ["t3.small"]
+  instance_types = ["t3.large"]
 
   scaling_config {
     desired_size = var.eks_node_desired
